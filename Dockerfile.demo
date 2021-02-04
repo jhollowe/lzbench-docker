@@ -1,0 +1,8 @@
+# this is the version of lzbench to build into a container
+ARG VERSION=1.8.1
+
+FROM lzbench:${VERSION}
+
+COPY ./silesia/* /data/
+
+CMD ["-r", "-eblosclz,1", "/data"]
