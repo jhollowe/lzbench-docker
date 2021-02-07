@@ -11,7 +11,7 @@ RUN apt-get update &&\
 RUN wget https://github.com/inikep/lzbench/archive/v${VERSION}.tar.gz &&\
   tar -xzf v${VERSION}.tar.gz && \
   cd lzbench-${VERSION} && \
-  make BUILD_STATIC=1
+  make BUILD_STATIC=1 -j$(nproc)
 
 
 FROM scratch
